@@ -4,8 +4,8 @@ My personal portfolio website created to showcase who I am and my skillset. The 
 
 ## Tech Stack
 
-[Next.js](https://nextjs.org) / Typescript
-[Tailwind CSS](https://tailwindcss.com) / Styling
+ - [Next.js](https://nextjs.org) / Typescript
+ - [Tailwind CSS](https://tailwindcss.com) / Styling
 
 ## Building locally
 
