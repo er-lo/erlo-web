@@ -4,14 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { label: "About", href: "about" },
-  { label: "Gear", href: "gear" },
-  { label: "Projects", href: "projects" },
-  { label: "Contact", href: "contact"}
+  { label: "About", href: "/about" },
+  { label: "Gear", href: "/gear" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact"}
 ];
 
 export default function Navigation() {
-  const pathname = `/${usePathname().split("/")[1]}`; // active paths on dynamic subpages
+  const pathname = usePathname(); // active paths on dynamic subpages
+  console.log(pathname);
   const [nav, showNav] = useState(false);
 
   return (
@@ -23,7 +24,7 @@ export default function Navigation() {
         <ul className="hidden md:flex items-center gap-1">
           {links.map((link) => (
             <li key={link.href}>
-              <Link className="px-4 py-2 text-sm hover:text-primary transition-colors" href={link.href}>{link.label}</Link>
+              <Link className={`link ${pathname === link.href ? 'px-4 py-2 text-sm font-bold' : 'px-4 py-2 text-sm'}`} href={link.href}>{link.label}</Link>
             </li>
           ))}
         </ul>
@@ -55,7 +56,7 @@ export default function Navigation() {
               <ul className="flex flex-col m-auto text-center animate-in">
                 {links.map((link) => (
                   <li className="px-4 py-2" key={link.href}>
-                    <Link className="text-2xl" href={link.href}>{link.label}</Link>
+                    <Link className={`link ${pathname === link.href ? 'text-xl font-bold' : 'text-xl'}`}  href={link.href} onClick={() => showNav(false)}>{link.label}</Link>
                   </li>
                 ))}
               </ul>
