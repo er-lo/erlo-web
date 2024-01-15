@@ -4,10 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { label: "About", href: "/about" },
-  { label: "Gear", href: "/gear" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact"}
+  { label: "About", href: "about" },
+  { label: "Gear", href: "gear" },
+  { label: "Projects", href: "projects" },
+  { label: "Contact", href: "contact"}
 ];
 
 export default function Navigation() {
@@ -53,18 +53,11 @@ export default function Navigation() {
             </div>
             <nav className="h-[95%] flex flex-col items-center justify-between m-auto">
               <ul className="flex flex-col m-auto text-center animate-in">
-                <li className="py-2">
-                  <a className="text-xl text-secondary" href="/about">About</a>
-                </li>        
-                <li className="py-2">
-                  <a className="text-xl text-secondary" href="/projects">Projects</a>
-                </li>
-                <li className="py-2">
-                  <a className="text-xl text-secondary" href="/gear">Gear</a>
-                </li>
-                <li className="py-2">
-                  <a className="text-xl text-secondary" href="/contact">Contact</a>
-                </li>
+                {links.map((link) => (
+                  <li className="px-4 py-2" key={link.href}>
+                    <Link className="text-2xl" href={link.href}>{link.label}</Link>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
