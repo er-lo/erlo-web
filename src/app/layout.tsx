@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navigation />
-        <div className="px-6 md:px-6 pt-16 pb-24 md:pt-20 md:pb-44 max-w-[700px] mx-auto">
+        <div className="px-6 md:px-6 pt-8 md:pt-20 max-w-[700px] mx-auto">
           {children}
         </div>
       </body>
