@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 const links = [
   { label: "Work", href: "/work" },
   { label: "Gear", href: "/gear" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact"}
+  //{ label: "Projects", href: "/projects" },
+  //{ label: "Contact", href: "/contact"}
 ];
 
 export default function Navigation() {
@@ -19,7 +19,7 @@ export default function Navigation() {
     <header className="relative md:sticky top-0 z-20 bg-white">
       <nav className="px-4 md:px-6 py-3 lg max-w-[700px] mx-auto flex justify-between items-center gap-3">
         <Link href="/" className="shrink-0 text-primary">
-          Hello
+          ERLO
         </Link>
         <ul className="hidden md:flex items-center gap-1">
           {links.map((link) => (
