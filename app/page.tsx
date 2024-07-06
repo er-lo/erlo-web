@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Page() {
   return (
-    <section className="mt-16 md:mt-0">
+    <section className="mt-8 md:mt-0">
       <div className="flex flex-col gap-6 mx-auto w-full md:flex-row md:items-center">
         <Image height={90} width={90} className="rounded-full max-w-[90px]" src={MyAvatar} alt="me"></Image>
         <div>
