@@ -1,10 +1,11 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { getProjectPosts } from 'app/projects/utils'
 import { baseUrl } from 'app/sitemap'
+import Link from 'next/link'
 
 export async function generateStaticParams() {
-  let posts = getBlogPosts()
+  let posts = getProjectPosts()
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -12,14 +13,14 @@ export async function generateStaticParams() {
 }
 
 export function generateMetadata({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug)
+  let post = getProjectPosts().find((post) => post.slug === params.slug)
   if (!post) {
     return
   }
 
   let {
     title,
-    publishedAt: publishedTime,
+    techUsed: publishedTime,
     summary: description,
     image,
   } = post.metadata
@@ -52,14 +53,14 @@ export function generateMetadata({ params }) {
 }
 
 export default function Blog({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug)
+  let post = getProjectPosts().find((post) => post.slug === params.slug)
 
   if (!post) {
     notFound()
   }
 
   return (
-    <section>
+    <section className='pr-4'>
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -68,8 +69,8 @@ export default function Blog({ params }) {
             '@context': 'https://schema.org',
             '@type': 'BlogPosting',
             headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
+            datePublished: post.metadata.techUsed,
+            dateModified: post.metadata.techUsed,
             description: post.metadata.summary,
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
@@ -82,12 +83,17 @@ export default function Blog({ params }) {
           }),
         }}
       />
+      <Link href="/projects">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-700 hover:dark:text-neutral-300">
+          <span className='text-lg'>↼</span> Back to Projects
+        </p>
+      </Link>
       <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
+          Tech Used: {post.metadata.techUsed}
         </p>
       </div>
       <article className="prose">

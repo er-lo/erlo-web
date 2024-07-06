@@ -5,7 +5,6 @@ import { GeistMono } from 'geist/font/mono'
 import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 
 export const metadata: Metadata = {
@@ -55,7 +54,7 @@ export default function RootLayout({
       <body className="antialiased flex flex-col h-screen max-w-5xl mx-auto overflow-hidden">
         <main className="flex flex-col md:flex-row md:mt-44 overflow-hidden">
           <Navbar />
-          <div className="overflow-y-auto p-10 md:p-0 md:w-md lg:w-2xl md:ml-10">
+          <div className="overflow-y-auto p-10 md:p-0 md:w-md lg:w-3xl md:ml-10 mb-36">
             {children}
           </div>
           <Analytics />

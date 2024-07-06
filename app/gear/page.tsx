@@ -9,21 +9,21 @@ export default function Gear() {
     <div className="mx-auto">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
-          <h1 className="text-2xl font-bold tracking-tight">My Gear</h1>
-          <p className="">The equipment I use for development.</p>
+          <h1 className="text-2xl font-semibold tracking-tight text-neutral-200">My Gear</h1>
+          <p className=" text-neutral-200">The equipment I use for development.</p>
         </div>
         <div className="flex flex-col gap-1">
           <h3 className="text-xl font-bold mb-1 border-b-2">Hardware</h3>
           <ul className="flex flex-col">
             {gear.map((gear) => (
               <li className="py-2" key={gear.title}>
-                <h1 className="mb-1 text-md md:text-lg font-bold">
+                <h1 className="mb-1 text-md md:text-lg font-bold text-neutral-200">
                   {gear.title} 
                 </h1>
                 <ul className="flex flex-col pl-2">
                   {gear.info.map((info) => (
                     <li key={info}>
-                      <p className="mb-2 uppercase tracking-wide text-sm text-gray-600">
+                      <p className="mb-2 uppercase tracking-wide text-sm text-neutral-400">
                         {info}
                       </p>
                     </li>

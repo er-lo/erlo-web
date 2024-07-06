@@ -15,7 +15,7 @@ export default function Work() {
               <li key={work.title}>
                 <h1 className="mb-1 text-md md:text-lg">
                   <svg className="inline-block align-baseline fill-current" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="4"></circle></svg>
-                  <span className="ml-2">
+                  <span className="ml-2 text-neutral-300">
                     <span className="font-bold">
                       {work.company} 
                     </span>
@@ -24,10 +24,10 @@ export default function Work() {
                   </span>
                 </h1>
                 <div className="border border-gray-500 border-r-0 border-t-0 border-b-0 pl-4 ml-1 mb-6">
-                  <p className="mb-2 uppercase tracking-wider text-sm text-gray-600 font-semibold">
+                  <p className="mb-2 uppercase tracking-wider text-sm text-neutral-500 font-semibold">
                     {work.time}
                   </p>
-                  <p className="text-sm md:text-md">{work.description}</p>
+                  <p className="text-sm md:text-md text-neutral-300">{work.description}</p>
                 </div>
               </li>
             ))}
