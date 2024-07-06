@@ -1,13 +1,14 @@
 const work = [
-  { title: "Validations/QMCS Specialist", company: "ALK", time: "May 2023 - Present", description: "In this role, I am responsible for the quality management of computerized systems. I draft and release software validation protocols and any technicial documents for computerized systems/equipment in accordance with federal regulations. I also work closely with managers from other departments to ensure gaps in technical documents are corrected. " },
-  { title: "Computer Science Tutor", company: "Oklahoma City Community College", time: "March 2023 - December 2023", description: "Assisted students with homework, projects and test preparation. Worked one on one with students to help them understand key concepts and complex problems from the courses. Tutored students in Visual Basic, C++, and Java." },
+  { title: "Computer Science Tutor", company: "Oklahoma City Community College", time: "March 2023 - December 2023 | June 2024 - PRESENT", description: "Assisted students with homework, projects and test preparation. Worked one on one with students to help them understand key concepts and complex problems from the courses. Tutored students in Visual Basic, C++, and Java." },
+  { title: "Validations/QMCS Specialist", company: "ALK", time: "May 2023 - May 2024", description: "In this role, I was responsible for the quality management of computerized systems. I drafted and released software validation protocols and any technicial documents required for computerized systems/equipment in accordance with federal regulations. I also worked closely with managers from other departments to ensure gaps in technical documents were corrected. " },
   { title: "Technical Services Microbiology Specialist", company: "ALK", time: "August 2020 - May 2023", description: "I drafted and released equipment validation protocols and technicial documents for equipment in accordance with federal regulations. I worked in a project setting where my manager and I would set deadlines for myself on the equipment I worked on. I assisted with internal and external audits." },
   { title: "Microbiology Team Lead", company: "ALK", time: "June 2019 - August 2020", description: "As team lead, I was in charge of a group of three microbiologists. I was in charge of creating schedules for laboratory tests and personnel. I was in charge of researching methods to advance test efficiency and cut down turn around times for product release." }
 ];
+
 export default function Work() {
   return (
-    <div className="px-6 md:px-6 mx-auto">
-      <div className="flex flex-col">
+    <div className="mx-auto">
+      <div className="flex flex-col"> 
         <div className="flex animate-in flex-col gap-8">
           <ul className="flex flex-col">
             {work.map((work) => (
@@ -37,3 +38,4 @@ export default function Work() {
     </div>
   )
 }
+  
