@@ -17,11 +17,11 @@ export function Navbar() {
   const [nav, showNav] = useState(false);
 
   return (
-    <div className="md:mr-10 md:w-20">
+    <div className="md:mx-12 md:w-20">
       <nav className="flex flex-col">
         <ul className="hidden md:flex flex-col gap-1">
           {links.map((link) => (
-            <li key={link.href} className="">
+            <li key={link.href} className="md:w-20">
               <Link className={`link ${pathname === link.href ? 'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 bg-zinc-900 rounded flex align-middle relative py-1 px-2 font-semibold ' : 'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 '}`} href={link.href}>{link.label}</Link>
             </li>
           ))}

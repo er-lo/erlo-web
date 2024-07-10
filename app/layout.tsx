@@ -52,9 +52,9 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased flex flex-col h-screen max-w-5xl mx-auto overflow-hidden">
-        <main className="flex flex-col md:flex-row md:mt-44 overflow-hidden">
+        <main className="flex flex-col md:flex-row md:mt-28 lg:mt-44 overflow-hidden">
           <Navbar />
-          <div className="overflow-y-auto p-10 md:p-0 md:w-md lg:w-3xl md:ml-10 mb-36">
+          <div className="overflow-y-auto px-10 md:p-0 md:pr-10 lg:w-3xl mb-8 md:mb-20 lg:mb-28">
             {children}
           </div>
           <Analytics />
